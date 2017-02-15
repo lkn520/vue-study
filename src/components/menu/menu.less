@@ -1,0 +1,54 @@
+@import '../../common/css/index.less';
+.menu {
+  .menu-body {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    background-color: @main2;
+    height: 100%;
+    z-index: 7;
+    transition: transform 300ms;
+    &.show  {
+      transform: translateX(250px);
+    }
+    .menu-user {
+      overflow: hidden;
+      background-color: @main3;
+      .menu-avatar {
+        width: 100px;
+        height: 100px;
+        margin: 20px auto;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .menu-name {
+        color: @main5;
+        text-align: center;
+        line-height: 40px;
+      }
+    }
+    .menu-list {
+      ul {
+        li {
+          .menu-icon {
+            display: inline-block;
+          }
+          .menu-text {
+            margin-left: 10px;
+          }
+          .link {
+            display: block;
+            line-height: 50px;
+            .border-bottom-1px(@main5);
+            padding: 0 20px;
+            color: @gray;
+            &.active {
+              color: @main5;
+            }
+          }
+        }
+      }
+    }
+  }
+}

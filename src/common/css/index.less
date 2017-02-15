@@ -1,0 +1,37 @@
+@white: #eee;
+@gray: #999;
+@black: #333;
+@main: #146e90;
+@main2: #293d5a;
+@main3: #023244;
+@main4: #69c1e3;
+@main5: #a4d2e3;
+
+@smallSize: 14px;
+@middleSize: 18px;
+@bigSize: 22px;
+
+body {
+  font-size: @middleSize;
+}
+
+.border-bottom-1px (@color) {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid @color;
+    width: 100%;
+  }
+}
+
+.clear-both {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
