@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div v-infinite-scroll="loadMore" infinite-scroll-distance="20" :infinite-scroll-disabled="isLoading">
+    <div v-infinite-scroll="loadMore" infinite-scroll-distance="20" infinite-scroll-disabled="busy">
       <div class="img-block clear-both">
-        <div class="item" v-for="img in imgData">
+        <figure class="item" v-for="img in imgData">
           <router-link :to="{name: 'detail', params: {gallery_id: img.gallery_id}}">
             <v-img :imageUrl="img.cover_url"></v-img>
           </router-link>
-        </div>
+        </figure>
       </div>
-      <div class="lazyloading" v-show="isLoading">
+      <div class="lazyloading" v-show="busy">
         <img src="../../assets/lazyloading.svg">
       </div>
     </div>
@@ -18,13 +18,13 @@
   </div>
 </template>
 <script>
-  import vImg from '../img/img.vue'
+  import vImg from '../img/lazyImg.vue'
   export default {
     data () {
       return {
         page: 1,
         imgData: [],
-        isLoading: false
+        busy: false
       }
     },
     components: {
@@ -35,7 +35,7 @@
     },
     methods: {
       'loadMore' () {
-        this.isLoading = true
+        this.busy = true
         // 多玩图片
         this.$http.jsonp('http://tu.duowan.com/index.php', {
           params: {
@@ -46,7 +46,7 @@
           }
         }).then((response) => {
           this.imgData = this.imgData.concat(response.data.gallerys)
-          this.isLoading = false
+          this.busy = false
         }, (response) => {
           console.log(response.state)
           alert('获取失败')

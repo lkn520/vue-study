@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import news from 'components/news/news'
-import wallpaper from 'components/wallpaper/wallpaper'
-import detail from 'components/detail/detail'
 
 Vue.use(Router)
 
@@ -16,29 +13,39 @@ export default new Router({
     {
       path: '/wallpaper',
       name: 'wallpaper',
-      component: wallpaper,
+      component (resolve) {
+        require(['components/wallpaper/wallpaper'], resolve)
+      },
       children: [
         {
           path: ':gallery_id',
           name: 'detail',
-          component: detail
+          component (resolve) {
+            return require(['components/detail/detail'], resolve)
+          }
         }
       ]
     },
     {
       path: '/news',
       name: 'news',
-      component: news
+      component (resolve) {
+        require(['components/news/news'], resolve)
+      }
     },
     {
       path: '/github',
       name: 'github',
-      component: news
+      component (resolve) {
+        require(['components/news/news'], resolve)
+      }
     },
     {
       path: '/html5',
       name: 'html5',
-      component: news
+      component (resolve) {
+        require(['components/news/news'], resolve)
+      }
     }
   ]
 })

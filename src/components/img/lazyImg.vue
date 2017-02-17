@@ -1,5 +1,5 @@
 <template>
-  <span class="img" v-bind:style="{backgroundImage: 'url('+imageUrl+')'}" :class="bgClass"></span>
+  <span class="img" v-lazy:background-image="imageUrl" :class="bgClass" lazy="loading"></span>
 </template>
 <script>
   export default {
@@ -19,6 +19,6 @@
     }
   }
 </script>
-<style lang="less">
+<style>
   @import "img.less";
 </style>

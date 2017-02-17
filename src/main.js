@@ -11,7 +11,7 @@ import infiniteScroll from 'vue-infinite-scroll'
 Vue.use(VueLazyload, {
   error: require('./assets/404.jpg'),
   loading: require('./assets/loading.svg'),
-  attempt: 3
+  attempt: 1
 })
 
 Vue.use(VueResource)
