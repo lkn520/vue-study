@@ -1,0 +1,36 @@
+@import 'index.less';
+html, body, #app {
+  height: 100%;
+  width: 100%;
+}
+#app {
+  position: relative;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: @middleSize;
+}
+#body {
+  position: absolute;
+  padding-top: 50px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+  -webkit-overflow-scrolling : touch;
+  overflow: auto;
+}
+.overflow-h {
+  overflow: hidden !important;
+}
+
+.clear-both {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+a {
+  color: @black;
+}

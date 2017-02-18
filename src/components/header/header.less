@@ -1,6 +1,6 @@
 @import "../../common/css/index.less";
 .header {
-  position: fixed;
+  position: absolute;
   z-index: 5;
   width: 100%;
   line-height: 50px;
@@ -31,4 +31,13 @@
 }
 .pull-right {
   right: 0;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.4);
+  z-index: 6;
 }

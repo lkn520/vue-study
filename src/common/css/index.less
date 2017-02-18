@@ -11,10 +11,6 @@
 @middleSize: 18px;
 @bigSize: 22px;
 
-body {
-  font-size: @middleSize;
-}
-
 .border-bottom-1px (@color) {
   position: relative;
   &:after {
@@ -25,13 +21,5 @@ body {
     bottom: 0;
     border-top: 1px solid @color;
     width: 100%;
-  }
-}
-
-.clear-both {
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
   }
 }

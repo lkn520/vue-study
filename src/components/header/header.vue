@@ -1,5 +1,5 @@
 <template>
-  <div v-show="isHeader">
+  <div>
     <div class="mask" v-show="menuShow" @click="isShow"></div>
     <header class="header" :class="{'show': menuShow}">
       <div class="bar">
@@ -24,7 +24,7 @@
     },
     computed: {
       ...mapState([
-        'menuShow', 'headerTitle', 'isHeader'
+        'menuShow', 'headerTitle'
       ])
     },
     methods: {

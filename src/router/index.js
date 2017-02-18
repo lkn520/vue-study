@@ -21,7 +21,7 @@ export default new Router({
           path: ':gallery_id',
           name: 'detail',
           component (resolve) {
-            return require(['components/detail/detail'], resolve)
+            require(['components/wallpaper/detail'], resolve)
           }
         }
       ]
@@ -31,7 +31,16 @@ export default new Router({
       name: 'movie',
       component (resolve) {
         require(['components/movies/movies'], resolve)
-      }
+      },
+      children: [
+        {
+          path: ':id',
+          name: 'movieDetail',
+          component (resolve) {
+            require(['components/movies/detail'], resolve)
+          }
+        }
+      ]
     },
     {
       path: '/github',
