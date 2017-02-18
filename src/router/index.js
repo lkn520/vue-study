@@ -27,24 +27,24 @@ export default new Router({
       ]
     },
     {
-      path: '/news',
-      name: 'news',
+      path: '/movie',
+      name: 'movie',
       component (resolve) {
-        require(['components/news/news'], resolve)
+        require(['components/movies/movies'], resolve)
       }
     },
     {
       path: '/github',
       name: 'github',
       component (resolve) {
-        require(['components/news/news'], resolve)
+        require(['components/movies/movies'], resolve)
       }
     },
     {
       path: '/html5',
       name: 'html5',
       component (resolve) {
-        require(['components/news/news'], resolve)
+        require(['components/movies/movies'], resolve)
       }
     }
   ]

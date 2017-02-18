@@ -15,7 +15,8 @@ const state = {
   'headers': data.header_title,
   'menusIcon': data.menus_icon,
   'isScroll': false,
-  'isHeader': true
+  'isHeader': true,
+  'loadingShow': false
 }
 
 // mutations函数
@@ -32,6 +33,9 @@ const mutations = {
   },
   update_header (state, bl) {
     state.isHeader = bl
+  },
+  update_loading (state, bl) {
+    state.loadingShow = bl
   }
 }
 

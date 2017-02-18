@@ -8,9 +8,6 @@
           </router-link>
         </figure>
       </div>
-      <div class="lazyloading" v-show="busy">
-        <img src="../../assets/lazyloading.svg">
-      </div>
     </div>
     <transition name="fade">
       <router-view></router-view>
@@ -30,12 +27,10 @@
     components: {
       vImg
     },
-    mounted () {
-      // this.loadMore()
-    },
     methods: {
       'loadMore' () {
         this.busy = true
+        this.$store.commit('update_loading', true)
         // 多玩图片
         this.$http.jsonp('http://tu.duowan.com/index.php', {
           params: {
@@ -46,6 +41,7 @@
           }
         }).then((response) => {
           this.imgData = this.imgData.concat(response.data.gallerys)
+          this.$store.commit('update_loading', false)
           this.busy = false
         }, (response) => {
           console.log(response.state)

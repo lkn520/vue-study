@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <v-header></v-header>
+    <v-loading :show="loadingShow"></v-loading>
     <div class="body" :class="{'overflow-h': isScroll}">
       <router-view></router-view>
     </div>
@@ -9,17 +10,18 @@
 
 <script>
 import vHeader from './components/header/header.vue'
+import vLoading from './components/loading/loading.vue'
 import {mapState} from 'vuex'
 
 export default {
   name: 'app',
   computed: {
     ...mapState([
-      'isScroll'
+      'isScroll', 'loadingShow'
     ])
   },
   components: {
-    vHeader
+    vHeader, vLoading
   }
 }
 </script>

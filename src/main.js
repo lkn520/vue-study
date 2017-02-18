@@ -17,6 +17,9 @@ Vue.use(VueLazyload, {
 Vue.use(VueResource)
 Vue.use(infiniteScroll)
 
+Vue.http.options.emulateHTTP = true
+Vue.http.options.emulateJSON = true
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
