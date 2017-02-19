@@ -6,6 +6,8 @@
 @main3: #023244;
 @main4: #69c1e3;
 @main5: #a4d2e3;
+@fff: #fff;
+@000: #000;
 
 @smallSize: 14px;
 @middleSize: 18px;
@@ -19,6 +21,19 @@
     position: absolute;
     left: 0;
     bottom: 0;
+    border-top: 1px solid @color;
+    width: 100%;
+  }
+}
+
+.border-top-1px (@color) {
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
     border-top: 1px solid @color;
     width: 100%;
   }

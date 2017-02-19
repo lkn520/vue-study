@@ -54,14 +54,4 @@
 </script>
 <style lang="less">
   @import 'wallpaper.less';
-  .fade-enter-active {
-    transition: all .3s linear;
-  }
-  .fade-leave-active {
-    transition: all .3s linear;
-  }
-  .fade-enter, .fade-leave-to
-    /* .slide-fade-leave-active for <2.1.8 */ {
-    transform: translateX(100%);
-  }
 </style>

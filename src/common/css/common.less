@@ -34,3 +34,14 @@ html, body, #app {
 a {
   color: @black;
 }
+
+.fade-enter-active {
+  transition: all .3s linear;
+}
+.fade-leave-active {
+  transition: all .3s linear;
+}
+.fade-enter, .fade-leave-to
+  /* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(100%);
+}

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="movie">
+    <div class="movie-list">
       <div class="movie-item" v-for="movie in movies">
         <router-link :to="{name: 'movieDetail', params: {id: movie.id}}">
           <div class="movie-group clear-both">
@@ -30,7 +30,9 @@
         </router-link>
       </div>
     </div>
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 <script>
