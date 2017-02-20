@@ -1,9 +1,11 @@
 <template>
-  <rd-swipe :swipe="swipe" ref="rdSwipe">
-    <div class="rd-swipe-item" v-for="(img, index) in images">
-      <v-img :imageUrl="img.url" :size="'contain'"></v-img>
-    </div>
-  </rd-swipe>
+  <div class="swipe-body">
+    <rd-swipe :swipe="swipe" ref="rdSwipe">
+      <div class="rd-swipe-item" v-for="(img, index) in images">
+        <v-img :imageUrl="img.url" :size="'contain'"></v-img>
+      </div>
+    </rd-swipe>
+  </div>
 </template>
 <script>
   import rdSwipe from 'vue-slide/vue-slide.vue'
@@ -54,14 +56,7 @@
 <style lang="less">
   @import 'detail.less';
   .rd-swipe {
-    position: fixed !important;
-    z-index: 10 !important;
     width: 100% !important;
     height: 100% !important;
-    background-color: #333 !important;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
   }
 </style>
