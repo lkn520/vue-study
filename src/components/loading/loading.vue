@@ -1,7 +1,5 @@
 <template>
-  <div class="loading" v-show="show">
-
-  </div>
+  <div class="loading" v-show="show"></div>
 </template>
 <script>
   export default {

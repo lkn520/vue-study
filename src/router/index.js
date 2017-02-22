@@ -41,20 +41,6 @@ export default new Router({
           }
         }
       ]
-    },
-    {
-      path: '/github',
-      name: 'github',
-      component (resolve) {
-        require(['components/movies/movies'], resolve)
-      }
-    },
-    {
-      path: '/html5',
-      name: 'html5',
-      component (resolve) {
-        require(['components/movies/movies'], resolve)
-      }
     }
   ]
 })

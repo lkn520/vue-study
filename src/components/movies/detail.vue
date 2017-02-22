@@ -15,6 +15,7 @@
           <p>{{movie.summary}}</p>
         </div>
       </div>
+    </div>
   </div>
 </template>
 <script>
@@ -49,7 +50,11 @@
         this.$http.jsonp(`https://api.douban.com/v2/movie/subject/${id}`).then((response) => {
           this.movie = response.data
           this.$nextTick(() => {
-            this.scroll = new BScroll(this.$el)
+            if (!this.scroll) {
+              this.scroll = new BScroll(this.$el)
+            } else {
+              this.scroll.refresh()
+            }
           })
         }, (response) => {
           console.log(response.status)
