@@ -32,7 +32,7 @@
         this.busy = true
         this.$store.commit('update_loading', true)
         // 多玩图片
-        this.$http.jsonp('http://tu.duowan.com/index.php', {
+        this.$http.jsonp('https://tu.duowan.com/index.php', {
           params: {
             r: 'api/ajaxgallerys',
             page: this.page,

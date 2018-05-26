@@ -41,7 +41,7 @@
     methods: {
       getDetail () {
         let gid = this.$route.params.gallery_id
-        this.$http.jsonp('http://tu.duowan.com/index.php?r=show/getByGallery', {params: {gid: gid}}).then((response) => {
+        this.$http.jsonp('https://tu.duowan.com/index.php?r=show/getByGallery', {params: {gid: gid}}).then((response) => {
           this.images = response.data.picInfo
           this.$nextTick(() => {
             this.$refs.rdSwipe.init()
